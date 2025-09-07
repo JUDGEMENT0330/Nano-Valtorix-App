@@ -1,0 +1,41 @@
+:root {
+  --background-rgb: 240, 242, 245;
+  --foreground-rgb: 15, 23, 42;
+  --primary-rgb: 67, 56, 202;
+  --glass-bg-rgb: 255, 255, 255, 0.5;
+  --glass-border-rgb: 255, 255, 255, 0.2;
+}
+
+[data-theme='dark'] {
+  --background-rgb: 15, 23, 42;
+  --foreground-rgb: 226, 232, 240;
+  --primary-rgb: 165, 180, 252;
+  --glass-bg-rgb: 30, 41, 59, 0.7;
+  --glass-border-rgb: 255, 255, 255, 0.1;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.glass-effect {
+  background: rgba(var(--glass-bg-rgb));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--glass-border-rgb));
+}
+
+.card-hover-effect {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+[data-theme='dark'] .card-hover-effect:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
